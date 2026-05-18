@@ -10,7 +10,6 @@ pipeline {
                     checkout scmGit(branches: [[name: '*/main']], extensions: [], userRemoteConfigs: [[credentialsId: 'github-token', url: 'https://github.com/Chirag21-dev/nodejs-helm.git']]))
                 }
             }
-        }
      
     stage('Node JS Build') {
       steps {
