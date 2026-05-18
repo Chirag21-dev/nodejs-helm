@@ -30,10 +30,10 @@ pipeline {
         stage('Deploy Docker Image to DockerHub') {
             steps {
                 script {
-                 withCredentials([string(credentialsId: 'dockerhub-pwd', variable: 'dockerhubpwd')]) {
-                    sh 'docker login -u devopshint -p ${dockerhubpwd}'
+                 withCredentials([usernameColonPassword(credentialsId: 'dockerhub-cred', variable: ''dockerhub-cred')]) {
+                    sh 'docker push devopshint/node-app-1.0'
                  }  
-                 sh 'docker push devopshint/node-app-1.0'
+                 # sh 'docker push devopshint/node-app-1.0'
                 }
             }
         }
