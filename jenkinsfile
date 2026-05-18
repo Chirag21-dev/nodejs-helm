@@ -30,7 +30,7 @@ pipeline {
             steps {
                 script {
                  withCredentials([usernameColonPassword(credentialsId: 'dockerhub-cred', variable: ''dockerhub-cred')]) {
-                    sh 'docker login -u chiragks1 -p ${dockerhub-cred}
+                    sh 'docker login -u chiragks1 -p ${dockerhub-cred}'
                  }  
                     sh 'docker push devopshint/node-app-1.0'
                 }
